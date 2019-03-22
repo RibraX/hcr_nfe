@@ -162,7 +162,7 @@ class AccountInvoice(models.Model):
         states={'draft': [('readonly', False)]},
         help=u"Série do número da Nota Fiscal do Fornecedor")
     nfe_version = fields.Selection(
-        [('1.10', '1.10'), ('2.00', '2.00'), ('3.10', '3.10')],
+        [('1.10', '1.10'), ('2.00', '2.00'), ('3.10', '3.10'), ('4.00', '4.00') ],
         u'Versão NFe', readonly=True, default=_default_nfe_version,
         states={'draft': [('readonly', False)]})
     date_hour_invoice = fields.Datetime(

@@ -63,7 +63,7 @@ def nfe_export(cr, uid, ids, nfe_environment='1',
         else:
             StrRegB['tpNF'] = '1'
 
-        if nfe_version == '3.10':
+        if nfe_version == '4.00':
 
             # Capturar a timezone do usuario
             user_pool = inv.pool.get('res.users')
@@ -342,7 +342,7 @@ def nfe_export(cr, uid, ids, nfe_environment='1',
         }
 
         # Adicionado
-        if nfe_version == '3.10':
+        if nfe_version == '4.00':
             StrRegE['indIEDest'] = inv.cfop_ids[0].id_dest
             StrRegE['IM'] = StrRegC['IM']
 
@@ -540,7 +540,7 @@ def nfe_export(cr, uid, ids, nfe_environment='1',
             StrRegI['NCM'] = punctuation_rm(
                 inv_line.fiscal_classification_id.name)
 
-            if nfe_version == '3.10':
+            if nfe_version == '4.00':
 
                 StrRegI['NVE'] = ''
                 StrRegI['nFCI'] = ''

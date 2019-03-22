@@ -29,15 +29,15 @@ class ResCompany(models.Model):
         domain="[('company_id', '=', active_id),('active','=',True),"
         "('fiscal_type','=','product')]")
     nfe_version = fields.Selection(
-        [('1.10', '1.10'), ('2.00', '2.00'), ('3.10', '3.10')], u'Versão NFe',
-        required=True, default='3.10')
+        [('1.10', '1.10'), ('2.00', '2.00'), ('3.10', '3.10'), ('4.00', '4.00')], u'Versão NFe',
+        required=True, default='4.00')
     nfe_import_folder = fields.Char('Pasta de Importação', size=254)
     nfe_export_folder = fields.Char('Pasta de Exportação', size=254)
     nfe_backup_folder = fields.Char('Pasta de Backup', size=254)
     nfe_environment = fields.Selection(
         [('1', u'Produção'), ('2', u'Homologação')], 'Ambiente Padrão')
     file_type = fields.Selection(
-        [('xml', 'XML'), ('txt', ' TXT')], 'Tipo do Arquivo Padrão')
+        [('txt', ' TXT'), ('xml', 'XML')], 'Tipo do Arquivo Padrão')
     sign_xml = fields.Boolean('Assinar XML')
     export_folder = fields.Boolean(u'Salvar na Pasta de Exportação')
     product_tax_definition_line = fields.One2many(
